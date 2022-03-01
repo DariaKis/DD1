@@ -1,0 +1,257 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Three.js</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="module.css">
+
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</head>
+<body>
+    <header id="header" class="header">
+        <div class="container">
+            <div class="nav">
+                <img class="icon" src="img/icon.svg.png" title="three.js">
+                <ul class="menu">
+                    <li>
+                        <a href="#about">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a  href="#using">
+                            Using
+                        </a>
+                    </li>
+                    <li>
+                        <a class="hidden" href="#example">
+                            Examples
+                        </a>
+                    </li>
+                </ul>
+                <ul class="social">
+                    <li>
+                        <a href="https://github.com/mrdoob/three.js/">GitHub</a>
+                    </li>
+                    <li>
+                        <a  href="https://twitter.com/threejs">Twitter</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="info">
+                    <h2>Hello, it`s about</h2>
+                    <h1>
+                        Three.js
+                    </h1>
+                <div id="animate" class="animate">
+                    <img src="img/animate.png">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div id="fundamentals" class="fundamentals">
+                <div class="btn">
+                    <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="img/icon.svg.png"></button>
+                </div>
+                <h2 class="title">
+                    Fundamentals
+                </h2>
+                <p class="text">
+                    Three.js is a 3D library that tries to make it as easy as possible to get 3D content on a webpage.<br/><br/>
+                    Three.js is often confused with WebGL since more often than not, but not always, three.js uses WebGL to draw 3D.<a href="https://webglfundamentals.org/"> WebGL is a very low-level system that only draws points, lines, and triangles.</a>
+                    When learning most programming languages the first thing people do is make the computer print "Hello World!". For 3D one of the most common first things to do is to make a 3D cube. So let's start with "Hello Cube!"
+                </p><br/>
+                <p class="diagram">
+                    Let's try to give you an idea of the structure of a three.js app. A three.js app requires you to create a bunch of objects and connect them together. Here's a diagram that represents a small three.js app.
+                   <img src="img/structure.svg">
+                </p><br/>
+                <h3>Things to notice about the diagram above.</h3>
+
+                <ul >
+                    <li>
+                        There is a <a href="https://threejs.org/docs/#api/en/constants/Renderer">Renderer</a>. This is arguably the main object of three.js. You pass a <a href="https://threejs.org/docs/#api/en/scenes/Scene">Scene</a> and a <a href="https://threejs.org/docs/#api/en/cameras/Camera">Camera</a> to a <a href="https://threejs.org/docs/#api/en/constants/Renderer">Renderer</a> and it renders (draws) the portion of the 3D scene that is inside the frustum of the camera as a 2D image to a canvas.
+                    </li>
+                    <li>
+                        There is a <a href="https://threejs.org/manual/#en/scenegraph">scenegraph</a> which is a tree like structure, consisting of various objects like a <a href="https://threejs.org/docs/#api/en/scenes/Scene">Scene</a> object, multiple <a href="https://threejs.org/docs/#api/en/objects/Mesh">Mesh</a> objects, <a href="https://threejs.org/docs/#api/en/lights/Light">Light</a> objects, <a href="https://threejs.org/docs/#api/en/objects/Group">Group</a>, <a href="https://threejs.org/docs/#api/en/core/Object3D">Object3D</a>, and <a href="https://threejs.org/docs/#api/en/cameras/Camera">Camera</a> objects. A <a href="https://threejs.org/docs/#api/en/scenes/Scene">Scene</a> object defines the root of the scenegraph and contains properties like the background color and fog. These objects define a hierarchical parent/child tree like structure and represent where objects appear and how they are oriented. Children are positioned and oriented relative to their parent. For example the wheels on a car might be children of the car so that moving and orienting the car's object automatically moves the wheels. You can read more about this in <a href="https://threejs.org/manual/#en/scenegraph">the article on scenegraphs</a>.
+                    </li>
+                    <li>
+                        <a href="https://threejs.org/docs/#api/en/objects/Mesh">Mesh</a> objects represent drawing a specific Geometry with a specific <a href="https://threejs.org/docs/#api/en/materials/Material">Material</a>. Both <a href="https://threejs.org/docs/#api/en/materials/Material">Material</a> objects and Geometry objects can be used by multiple <a href="https://threejs.org/docs/#api/en/objects/Mesh">Mesh</a> objects. For example to draw two blue cubes in different locations we could need two <a href="https://threejs.org/docs/#api/en/objects/Mesh">Mesh</a> objects to represent the position and orientation of each cube. We would only need one Geometry to hold the vertex data for a cube and we would only need one <a href="https://threejs.org/docs/#api/en/materials/Material">Material</a> to specify the color blue. Both <a href="https://threejs.org/docs/#api/en/objects/Mesh">Mesh</a> objects could reference the same Geometry object and the same <a href="https://threejs.org/docs/#api/en/materials/Material">Material</a> object.
+                    </li>
+                    <li>
+                        Geometry objects represent the vertex data of some piece of geometry like a sphere, cube, plane, dog, cat, human, tree, building, etc... Three.js provides many kinds of built in <a href="https://threejs.org/manual/#en/primitives">geometry primitives</a>. You can also <a href="https://threejs.org/manual/#en/custom-buffergeometry">create custom geometry</a> as well as <a href="https://threejs.org/manual/#en/load-obj">load geometry from files</a>.
+                    </li>
+                    <li>
+                        <a href="https://threejs.org/docs/#api/en/materials/Material">Material</a> objects represent <a href="https://threejs.org/manual/#en/materials">the surface properties used to draw geometry</a> including things like the color to use and how shiny it is. A <a href="https://threejs.org/docs/#api/en/materials/Material">Material</a> can also reference one or more <a href="https://threejs.org/docs/#api/en/textures/Texture">Texture</a> objects which can be used, for example, to wrap an image onto the surface of a geometry.
+                    </li>
+                    <li>
+                        <a href="https://threejs.org/docs/#api/en/textures/Texture">Texture</a> objects generally represent images either <a href="https://threejs.org/manual/#en/textures">loaded from image files</a>, <a href="https://threejs.org/manual/#en/canvas-textures">generated from a canvas</a> or rendered from another scene.
+                    </li>
+                    <li>
+                        <a href="https://threejs.org/docs/#api/en/lights/Light">Light</a> objects represent <a href="https://threejs.org/manual/#en/lights">different kinds of lights</a>.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="using" class="using">
+        <div class="container">
+            <h2 class="title">
+                How to use?
+            </h2>
+            <div class="left">
+                <h3>
+                    First let's load three.js
+                </h3>
+                <p>
+                    <img class="useImg" src="img/code/code1.png">
+                </p>
+            </div>
+
+            <div class="left">
+                <ol>
+                    <li>
+                        Next we need is a "canvas" tag;<br/>
+                        <img src="img/code/code2.png">
+
+                    </li>
+                    <li>
+                        We will ask three.js to draw into that canvas so we need to look it up;<br/>
+                        <img src="img/code/code3.png">
+                    </li>
+                    <li>
+                        After we look up the canvas we create a <a href="https://threejs.org/docs/#api/en/renderers/WebGLRenderer">WebGLRenderer</a>;<br/>
+                    </li>
+                    <li>
+                        Next up we need a camera. We'll create a <a href="https://threejs.org/docs/#api/en/cameras/PerspectiveCamera">PerspectiveCamera</a>;<br/>
+                        <img src="img/code/code4.png">
+                    </li>
+                    <li>
+                        Next we make a <a href="https://threejs.org/docs/#api/en/scenes/Scene">Scene</a>. A <a href="https://threejs.org/docs/#api/en/scenes/Scene">Scene</a> in three.js is the root of a form of scene graph. We'll cover more details of <a href="https://threejs.org/manual/#en/scenegraph">how scenes work in a future article</a>;<br/>
+                        <img src="img/code/code5.png">
+                    </li>
+                    <li>
+                        Next up we create a <a href="https://threejs.org/docs/#api/en/geometries/BoxGeometry">BoxGeometry</a> which contains the data for a box. Almost anything we want to display in Three.js needs geometry which defines the vertices that make up our 3D object;<br/>
+                        <img src="img/code/code6.png">
+                    </li>
+                    <li>
+                        We then create a basic material and set its color. Colors can be specified using standard CSS style 6 digit hex color values;<br/>
+                        <img src="img/code/code7.png">
+                    </li>
+                    <li>We then create a <a href="https://threejs.org/docs/#api/en/objects/Mesh">Mesh</a>. A <a href="https://threejs.org/docs/#api/en/objects/Mesh">Mesh</a> in three represents the combination of a three things;<br/>
+                        <ol class="secondUl">
+                            <li>
+                                A Geometry (the shape of the object);
+                            </li>
+                            <li>
+                                A <a href="https://threejs.org/docs/#api/en/materials/Material">Material</a> (how to draw the object, shiny or flat, what color, what texture(s) to apply. Etc.);
+                            </li>
+                            <li>
+                                The position, orientation, and scale of that object in the scene relative to its parent. In the code below that parent is the scene.<br/>
+                            </li>
+                        </ol>
+                        <img src="img/code/code8.png">
+                    </li>
+                    <li>
+                        And finally we add that mesh to the scene.<br/>
+                        <img src="img/code/code9.png">
+                    </li><br/>
+                </ol>
+            </div>
+            <div class="left">
+                <p class="code">
+                    We can then render the scene by calling the renderer's render function and passing it the scene and the camera.<br/>
+                    <img src="img/code/code10.png"><br/>
+                    Let's animate it spinning and hopefully that will make it clear it's being drawn in 3D. To animate it we'll render inside a render loop using <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame">requestAnimationFrame</a>. <br/><br/>
+                    Here's our loop<br/>
+                    <img src="img/code/code11.png">
+                </p>
+                <p>
+                    Here's a working example<br/><br/>
+                    <a href="https://threejs.org/manual/examples/fundamentals-with-animation.html" title="Example" class="click">click here to open in a separate window</a>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="example" class="example">
+        <div class="container">
+            <h2 class="title">
+                Examples
+            </h2>
+            <h3>Below you can find some examples of how Three.js works and links to full versions.</h3>
+            <div class="blocks">
+                <div class="screen">
+                    <a href="https://threejs.org/examples/#webgl_helpers">
+                        <img class="block-img" src="img/block1.png" title="Example1">
+                    </a>
+                    <p>Three.js - helpers</p>
+                </div>
+                <div class="screen">
+                    <a href="https://threejs.org/examples/#webgl_lines_sphere">
+                        <img class="block-img" src="img/block2.png" title="Example2">
+                    </a>
+                    <p>Three.js - lines WebGL demo</p>
+                </div>
+                <div class="screen">
+                    <a href="https://threejs.org/examples/#webgl_lights_pointlights">
+                        <img class="block-img" src="img/block3.png" title="Example3">
+                    </a>
+                    <p>Walt Disney head by David Oreilly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer">
+        <div class="container">
+            <h2 class="title">
+                Contacts and Info
+            </h2>
+            <div class="contact">
+                <h3>Now you can read more about Three.js. Let`s do it!</h3>
+                <ul>
+                    <li>
+                        <a href="https://threejs.org/" >three.js r138</a>
+                    </li>
+                    <li>
+                        <a href="https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene">Manual</a>
+                    </li>
+                    <li>
+                        <a href="https://threejs.org/manual/#en/fundamentals">Three.js Fundamentals</a>
+                    </li>
+                    <li>
+                        <a href="https://threejs-journey.com/">Three.js Journey</a>
+                    </li>
+                    <li>
+                        <a href="https://threejs-store.creator-spring.com/?">Merch</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

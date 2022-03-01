@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
+    font-size: 16px;
+}
+@media (max-width: 1170px) {
+    body{
+        font-size: 14px;
+        max-width: 100%;
+    }
+    .container{
+        max-width: 970px;
+    }
+    section{
+        line-height: 1;
+    }
+    header{
+        max-width: 100%;
+    }
+    .nav{
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .info{
+        margin-bottom: 50px;
+        margin-left: 80px;
+    }
+    .animate img{
+        width: 250px;
+        height: 250px;
+        top: 200px;
+    }
+    .fundamentals p{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    .fundamentals ul{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    .fundamentals h3{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    .left{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    #using img{
+        max-width: 600px;
+    }
+    .title{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .example h3{
+        margin-left: 50px;
+    }
+    .blocks{
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .screen{
+        max-width: 320px;
+        margin-bottom: 30px;
+    }
+    .screen img{
+        width: 320px;
+    }
+    .contact{
+        margin-left: 50px;
+    }
+}
+
+@media (max-width: 960px) {
+    .container{
+        max-width: 750px;
+    }
+    body{
+        font-size: 12px;
+        max-width: 100%;
+    }
+    header{
+        max-width: 100%;
+    }
+    .icon{
+        width: 50px;
+        height: 40px;
+    }
+    .nav{
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .animate{
+        display:none;
+    }
+    #using img{
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 540px) {
+    .container{
+        max-width: none;
+    }
+    body{
+        font-size: 10px;
+        max-width: 100%;
+    }
+    header{
+        max-width: 100%;
+    }
+    .nav{
+        width: 90%;
+    }
+    .social li{
+        display: none;
+    }
+    .info{
+        margin: 0;
+        padding-left: 20px;
+    }
+    #using img{
+        max-width: 250px;
+        margin-left: 0;
+    }
+    #using li{
+        margin-left: 0;
+    }
+    .hidden{
+        display: none;
+    }
+    .secondUl {
+        padding-inline-start: 0;
+    }
+    .screen{
+        margin: 0;
+        padding: 0;
+    }
+    .screen img{
+        max-width: 250px;
+        height:190px ;
+    }
+}
+
+h1, h2, h3, h4, h5, h6{
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+}
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+}
+section{
+    letter-spacing: 0.01em;
+    line-height: 1.7;
+}
+header{
+    background: url("./img/back.jpg") no-repeat center top/cover;
+    padding-top: 57px;
+    padding-bottom: 50px;
+}
+.title{
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid cadetblue;
+    font-size: 35px;
+    text-shadow: 3px 3px 3px cadetblue, 0 0 1em white;
+}
+.header a{
+    color: black;
+}
+.menu{
+    display: flex;
+    letter-spacing: 0.1em;
+}
+.menu li{
+    margin-right: 40px;
+    list-style-type: none;
+}
+.menu li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-shadow: 1px 1px 2px cadetblue, 0 0 1em white;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255, 0.7);
+    border-radius: 10px;
+}
+.icon{
+    height: 50px;
+    margin-right: 69px;
+    color: white;
+}
+.social{
+    display: flex;
+    margin-left: auto;
+}
+.social li{
+    margin-right: 40px;
+    list-style-type: none;
+}
+.social li a{
+    text-decoration: none;
+    text-shadow: 1px 1px 2px cadetblue;
+}
+.info{
+    color: white;
+    text-transform: uppercase;
+    margin-top: 186px;
+}
+.info p{
+    font-size: 30px;
+    margin-bottom: 30px;
+    letter-spacing: 0.1em;
+}
+.info h1{
+    font-size: 79px;
+    margin-bottom: 30px;
+    margin-top: -9px;
+    letter-spacing: 0.02em;
+}
+.animate img{
+    max-width: 400px;
+    max-height: 400px;
+    position: absolute;
+    right: 250px;
+    bottom: 190px;
+    z-index: 95;
+    animation-name: rotation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes rotation {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.about ul {
+    list-style-type: circle;
+}
+.about ul li{
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+.text{
+    text-align: justify;
+}
+.fundamentals p{
+    letter-spacing: 0.01em;
+    line-height: 1.7;
+}
+.fundamentals h3{
+    margin-bottom: 25px;
+    border-bottom: 1px solid cadetblue;
+}
+.fundamentals ul{
+    list-style-type: circle;
+}
+.fundamentals a{
+    text-decoration: none;
+    color: cadetblue;
+}
+.diagram{
+    margin-bottom: 60px;
+}
+.using ol{
+    list-style-type: circle;
+}
+
+.using ol li{
+    margin-left: 20px;
+    margin-bottom: 25px;
+}
+.using ol li img{
+    margin-left: 30px;
+}
+.using img{
+    max-width: 900px;
+    height: auto;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+.using a{
+    text-decoration: none;
+    color: cadetblue;
+}
+.useImg{
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+.code img{
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.click{
+    border: 2px solid black;
+    padding: 15px;
+}
+.secondUl{
+    margin-left: 60px;
+    margin-top: 15px;
+}
+.example h3{
+    text-transform: none;
+    margin-bottom: 30px;
+}
+.blocks{
+    display: flex;
+}
+.blocks {
+    color: cadetblue;
+}
+.block-img{
+    max-width: 320px;
+    height: 220px;
+    border-radius: 10px;
+}
+.screen{
+    margin-left: 70px;
+}
+.screen a{
+    max-width: 100px;
+}
+.contact{
+    margin-bottom: 15px;
+}
+.contact h3{
+    margin-bottom: 20px;
+    text-transform: none;
+}
+.contact ul{
+    list-style-type: none;
+    margin-bottom: 50px;
+    justify-content: space-between;
+}
+.contact li{
+    margin-bottom: 4px;
+}
+.contact li a{
+    text-decoration: none;
+    color: cadetblue;
+}
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: cadetblue;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    width: 100px;
+}
+#myBtn:hover {
+    background-color: white;
+    border: 2px solid cadetblue;
+}
+.btn img{
+    width: 30px;
+    height: 30px;
+}
